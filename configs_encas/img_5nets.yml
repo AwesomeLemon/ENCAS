@@ -1,0 +1,35 @@
+dataset: imagenet
+dataset_type: val
+dataset_postfix: ''
+label_postfix: '20683'
+
+input_experiment_names:
+  - imagenet_r0_alpha_sep
+  - imagenet_r0_ofa12_sep
+  - imagenet_r0_ofa10_sep
+  - imagenet_r0_attn_sep
+  - imagenet_r0_proxyless_sep
+input_search_spaces:
+  - alphanet
+  - ofa12
+  - ofa10
+  - attn
+  - proxyless
+max_iters:
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+funs_to_get_subnets_names: null
+
+n_evals: 600000
+ensemble_size: 5
+if_allow_noop: true
+algo: mo-gomea #random #
+search_goal: cascade
+
+gomea_exe: /home/chebykin/MO_GOMEA/exes/MO_GOMEA_default_ndinit_lb_lessoutput_intsolution_dontcountcache_usepythonpath
+out_name_template: 'posthoc_{dataset}_r0{dataset_postfix}_{n_inputs}nets_{join_or_sep}_n{ensemble_size}_evals{n_evals}_{search_goal}_moregranular3_002'
+random_seed: 1723
+git_hash: f04e5f0b4d09120defd82b6a599522a225c5711a

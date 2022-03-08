@@ -1,0 +1,35 @@
+dataset: cifar10
+dataset_type: val
+dataset_postfix: '_swa20' # '_swa20_everysubnet' # 
+label_postfix: '10000'
+
+input_experiment_names:
+  - cifar10_r0_alpha_sep
+  - cifar10_r0_ofa12_sep
+  - cifar10_r0_ofa10_sep
+  - cifar10_r0_attn_sep
+  - cifar10_r0_proxyless_sep
+input_search_spaces:
+  - alphanet
+  - ofa12
+  - ofa10
+  - attn
+  - proxyless
+max_iters:
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+funs_to_get_subnets_names: null # last_iter #
+
+n_evals: 600000
+ensemble_size: 5
+if_allow_noop: true
+algo: mo-gomea #greedy #
+search_goal: cascade
+
+gomea_exe: /home/chebykin/MO_GOMEA/exes/MO_GOMEA_default_ndinit_lb_lessoutput_intsolution_dontcountcache_usepythonpath
+out_name_template: 'posthoc_{dataset}_r0{dataset_postfix}_{n_inputs}nets_{join_or_sep}_n{ensemble_size}_evals{n_evals}_{search_goal}_moregranular3_002'
+random_seed: 1723
+git_hash: 827ef869ab2e9b1c68b2e26d5ebaa0a3200675d3

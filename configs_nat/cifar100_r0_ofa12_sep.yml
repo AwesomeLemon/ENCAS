@@ -1,0 +1,53 @@
+data: /projects/0/einf2071/data/CIFAR100/
+dataset: cifar100
+zeroeth_gpu: 0
+gpu: 1
+iterations: 30
+n_classes: 100
+n_doe: 300
+n_epochs: 5
+n_warmup_epochs: 0
+n_gpus: 2
+n_iter: 300
+n_surrogate_evals: 10000
+n_workers: 8
+path_logs: /projects/0/einf2071/nsganetv2/logs/
+predictor: rbf_ensemble
+random_seed: 1723
+seed_offset: 0
+sec_obj: flops
+supernet_path: 
+  - data/ofa/supernet_w1.2
+alphabet: 
+  - full_nat_w12
+ensemble_ss_names:
+  - ofa
+search_space: ensemble
+experiment_name: cifar100_r0_ofa12_sep
+train_continuous: true
+trn_batch_size: 96
+use_diversity_objective: false
+vld_batch_size: 150
+vld_size: 10000
+cutout_size: 0
+n_runs: 2
+dont_check_duplicates: true
+add_archive_to_candidates: true
+sample_configs_to_train: false
+init_with_nd_front: false
+if_debug_run: false
+if_create_unique_gpu_lock: false
+gomea_exe: /home/chebykin/MO_GOMEA/exes/MO_GOMEA_default_ndinit_lb_lessoutput_intsolution_dontcountcache_usepythonpath
+if_single_gpu_mode: true
+store_checkpoint_freq: 1
+use_gradient_checkpointing: false
+if_amp: true
+lr_schedule_type: cosine
+resize_scale: 0.08
+if_cutmix: true
+post_swa: 20
+if_store: true
+git_hash: d078eea6ec076eb56627f047e5b20efe1cb85963
+algo_mods_all:
+  - search_algo: nsga3
+    subset_selector: reference

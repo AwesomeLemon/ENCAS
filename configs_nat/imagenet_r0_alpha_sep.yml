@@ -1,0 +1,54 @@
+data: /projects/0/einf2071/data/imagenet/
+dataset: imagenet
+zeroeth_gpu: 0
+gpu: 1
+iterations: 15
+n_classes: 1000
+n_doe: 150
+n_epochs: 0
+n_warmup_epochs: 0
+n_gpus: 2
+n_iter: 30
+n_surrogate_evals: 2000
+n_workers: 8
+path_logs: /projects/0/einf2071/nsganetv2/logs/
+predictor: rbf_ensemble
+random_seed: 1723
+seed_offset: 0
+sec_obj: flops
+supernet_path: 
+  - data/alphanet_pretrained.pth.tar
+alphabet: 
+  - full_alphanet
+ensemble_ss_names:
+  - alphanet
+search_space: ensemble
+experiment_name: imagenet_r0_alpha_sep
+train_continuous: true
+trn_batch_size: 96
+use_diversity_objective: false
+vld_batch_size: 192
+# vld_size: 10000
+cutout_size: 0
+n_runs: 2
+dont_check_duplicates: false
+add_archive_to_candidates: false
+sample_configs_to_train: false
+init_with_nd_front: false
+if_debug_run: false
+if_create_unique_gpu_lock: false
+gomea_exe: /home/chebykin/MO_GOMEA/exes/MO_GOMEA_default_ndinit_lb_lessoutput_intsolution_dontcountcache_usepythonpath
+if_single_gpu_mode: true
+store_checkpoint_freq: 99
+use_gradient_checkpointing: false
+if_amp: true
+# lr_schedule_type: cosine
+# resize_scale: 0.08
+# if_cutmix: true
+# post_swa: 20
+if_store: true
+auto_augment: null
+git_hash: f04e5f0b4d09120defd82b6a599522a225c5711a
+algo_mods_all:
+  - search_algo: nsga3
+    subset_selector: reference
