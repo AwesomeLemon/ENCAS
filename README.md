@@ -4,8 +4,8 @@ ENCAS is a NAS algorithm for efficiently searching network architectures to be c
 It utilizes multiple pretrained supernetworks that have different operations and search spaces. 
 Our algorithm is multiobjective: in a single run, it finds many models with different trade-offs between accuracy and FLOPS. 
 
-This repo contains the code for our paper "Evolutionary Neural Cascade Search across Supernetworks" (link), which includes 
-ENCAS, ENCAS-joint, and reproduction of Neural Architecture Transfer (https://arxiv.org/abs/2005.05859).
+This repo contains the code for our paper [Evolutionary Neural Cascade Search across Supernetworks](https://arxiv.org/abs/2203.04011), which includes 
+ENCAS, ENCAS-joint, and reproduction of [Neural Architecture Transfer](https://arxiv.org/abs/2005.05859).
 
 ## Results
 
@@ -32,6 +32,8 @@ PyTorch needs to be restricted to deterministic operations, which negatively aff
 speed. However, the results should be very close in terms of metrics (since for our paper we ran each experiment 10 times).
 
 Since NAT spends roughly half of the time not using GPU, the code was written to allow 2 runs to use a single GPU (this is achieved by only working with GPU in subprocesses, which are killed once they are done, allowing the next subprocess to use the entire VRAM).
+
+The data of all our experiments (including the supernetwork weights) is available [here](https://surfdrive.surf.nl/files/index.php/s/p53yWOhZ5g2UXyc).
 
 ### Preparation
 
