@@ -1,4 +1,8 @@
-# ENCAS: Evolutionary Neural Cascade Search across Supernetworks
+# ENCAS: Evolutionary Neural Cascade Search across Supernetworks (Best Paper @ GECCO 2022)
+
+[Paper](https://arxiv.org/abs/2203.04011)
+
+[Blog](https://awesomelemon.github.io/2022/07/12/Evolutionary-neural-cascade-search-across-supernetworks.html)
 
 ENCAS is a NAS algorithm for efficiently searching network architectures to be combined in a cascade.
 It utilizes multiple pretrained supernetworks that have different operations and search spaces. 
@@ -130,6 +134,25 @@ Run ``python encas/post_hoc_search_run_many.py --config configs_encas/timm.yml``
 The code to reproduce the figures in our paper is also published. Once you have run the experiments referenced in a figure,
 you can create the figure by uncommenting & running the relevant lines in ``plot_results/plot_results_[cifar10|cifar100|imagenet]``
 (the figure numbers are mentioned in the code).
+
+## Bibtex:
+
+```
+@inproceedings{10.1145/3512290.3528749,
+	author = {Chebykin, Alexander and Alderliesten, Tanja and Bosman, Peter A. N.},
+	title = {Evolutionary Neural Cascade Search across Supernetworks},
+	year = {2022},
+	isbn = {9781450392372},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3512290.3528749},
+	doi = {10.1145/3512290.3528749},
+	booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference},
+	pages = {1038–1047},
+	numpages = {10},
+	series = {GECCO '22}
+}
+```
 
 ## Acknowledgments for code
 
