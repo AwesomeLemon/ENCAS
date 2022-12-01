@@ -73,7 +73,9 @@ pip install git+https://github.com/AwesomeLemon/pySOT
 
 (these are my forks of those repos with a couple of minor bugs fixed)
 
-Finally, activate the environment.
+Finally, activate the environment. 
+
+(Don't forget to check that your GPU can be used by Pytorch)
 
 ### Reproducing Neural Architecture Transfer (NAT)
 
@@ -81,7 +83,7 @@ Configs: `configs_nat/cifar[10|100]_reproducenat.yml`
 
 Change ``data`` (path to the dataset), ``path_logs`` (path to the logs folder), ``n_runs`` (how many runs/seeds).
 
-Run ``python nat_run_many.py --config configs/cifar10_reproducenat.yml``
+Run ``python nat_run_many.py --config configs_nat/cifar10_reproducenat.yml``
 
 ### NAT with better hyperparameters (for ENCAS)
 
@@ -89,7 +91,7 @@ Configs: `configs_nat/[cifar10|cifar100|imagenet]_r0_[alpha|attn|ofa10|ofa12|pro
 
 Change ``data`` (path to the dataset), ``path_logs`` (path to the logs folder), ``n_runs`` (how many runs/seeds).
 
-Run ``python nat_run_many.py --config configs/cifar10_r0_alpha_sep.yml`` for the dataset and the supernetwork of your choice.
+Run ``python nat_run_many.py --config configs_nat/cifar10_r0_alpha_sep.yml`` for the dataset and the supernetwork of your choice.
 
 ### ENCAS-joint
 
@@ -97,7 +99,7 @@ Configs: `configs_nat/cifar[10|100]_r0_[alphaofa|5nets].yml`
 
 Change ``data`` (path to the dataset), ``path_logs`` (path to the logs folder), ``n_runs`` (how many runs/seeds), ``gomea_exe`` (path to the MO-GOMEA executable you compiled).
 
-Run ``python nat_run_many.py --config configs/cifar10_r0_5nets.yml``. 
+Run ``python nat_run_many.py --config configs_nat/cifar10_r0_5nets.yml``. 
 The included configs are either for all 5 supernetworks or for AlphaNet+OFA-w1.2, but any combination of the supernetworks can be used.
 
 ### ENCAS
