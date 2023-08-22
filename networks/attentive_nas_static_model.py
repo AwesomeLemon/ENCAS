@@ -32,8 +32,7 @@ class AttentiveNasStaticModel(MyNetwork):
     @property
     def module_str(self):
         _str = self.first_conv.module_str + '\n'
-        for block in self.blocks:
-            _str += block.module_str + '\n'
+        _str = '\n'.join([block.module_str for block in self.blocks])
         #_str += self.last_conv.module_str + '\n'
         _str += self.classifier.module_str
         return _str
