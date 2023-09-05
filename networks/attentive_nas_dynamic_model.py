@@ -264,8 +264,7 @@ class AttentiveNasDynamicModel(MyNetwork):
         for stage_id, block_idx in enumerate(self.block_group_info):
             depth = self.runtime_depth[stage_id]
             active_idx = block_idx[:depth]
-            for idx in active_idx:
-                _str += self.blocks[idx].module_str + '\n'
+            _str = '\n'.join([self.blocks[idx].module_str for idx in active_idx])
         if not self.use_v3_head:
             _str += self.last_conv.module_str + '\n'
         else:
